@@ -1,0 +1,195 @@
+:root {
+  --color-white: #fff;
+  --background-color: #e2e2e2;
+  --text-color: #666;
+  --highlight-color: #9c1515d8;
+  --footer-color: #ff3838;
+  --background-footer: #000000ea;
+}
+
+* {
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background-color);
+}
+
+body{
+  min-width: 480px;
+  max-width: 1330px;
+  margin: 0 auto;
+
+}
+.container{
+  width: 100%;
+  background: url(../assets/images/home-bg.jpg);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "home" "speciality";
+}
+.header{
+  grid-area: header;
+}
+.home{
+  grid-area: home;
+}
+.specialitiescontainer{
+  grid-area: speciality;
+}
+
+/* Header */
+/* La animación de botón hay que hay que hacer con after o before */
+.home__btn{
+  position: relative;
+   overflow: hidden;
+   z-index: 1;
+}
+.home__btn::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  background-color: var(--highlight-color);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition-duration: 1s;
+}
+.home__btn:hover{
+  color: var(--color-white);
+}
+.home__btn:hover::after{
+  left: 0;
+}
+
+
+
+/* Especialidades */
+/* Hay que maquetar esta sección con flex y la parte de responsive también debe funcionar con flex */
+.specialties{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.speciality{
+  background-color: #e2e2e2;
+  position: relative;
+  flex: 1 1 350px;
+  height: 250px;
+   overflow: hidden; 
+  
+}
+.speciality__main-img {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  top:-100%;
+  transition-duration: 2s;
+}
+.speciality__content{
+  position: absolute;
+  top: 0;
+  transition: 2s;
+}
+
+.speciality:hover .speciality__main-img{
+  top: 0;
+  z-index: 10;
+}
+.speciality:hover .speciality__content{
+  top: 100%;
+
+}
+/* Galería */
+
+.foods {
+  /* Hay que maquetar esta sección con flex y la parte de responsive también debe funcionar con flex */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.food {
+  /* Hay que maquetar esta sección con flex y la parte de responsive también debe funcionar con flex */
+  flex: 1 1 400px;
+  height: 200px;
+  border: 1rem solid var(--color-white);
+  box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, .1);
+  border-radius: .5rem;
+}
+
+.food__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+/* Footer */
+
+.footer {
+  padding: 1rem 0;
+  background: var(--background-footer);
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.footer__social {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer__btn {
+  display: inline-block;
+  width: 115px;
+  padding: 0.25rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: .25rem;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  z-index: 0;
+  border: 1px solid var(--footer-color);
+  color: var(--footer-color);
+  font-weight: 600;
+   overflow: hidden;
+ }
+
+/* !!!!!!Falta la parte de la animación que hay que hacer con after o before !!!!!*/
+.footer__btn::after{
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background-color: var(--highlight-color);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition-duration: 1s;
+}
+.footer__btn:hover{
+  color: var(--color-white);
+}
+.footer__btn:hover::after{
+  top: 0;
+}
+.footer__text {
+  color: var(--footer-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer__text-ies {
+  color: var(--background-color);
+  font-weight: 600;
+}
+
+

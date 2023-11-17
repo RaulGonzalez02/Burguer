@@ -1,0 +1,264 @@
+:root {
+  --background-color: #f7f7f7;
+  --text-color: #666;
+  --highlight-color: #9c1515d8;
+  --footer-color: #ff3838;
+  --background-footer: #000000ea;
+}
+
+
+
+.header__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  color: #666;
+  background-color: var(--background-color);
+}
+
+.header__link {
+  text-decoration: none;
+  color: #666;
+  font-size: 2rem;
+}
+
+.header__text {
+  color: #ff3838;
+}
+
+.home {
+  padding: 20px;
+}
+
+.home__image-container {
+  display: none;
+}
+
+
+
+.home__content {
+  text-align: justify;
+  padding: 10px;
+}
+
+.home__title {
+  font-size: 2rem;
+  color: var(--highlight-color);
+}
+
+.home__container-btn {
+  display: none;
+}
+
+.specialitiescontainer__title {
+  font-size: 2rem;
+}
+
+.specialitiescontainer__title-color {
+  color: var(--highlight-color);
+}
+
+.speciality__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.foodgallery {
+  display: none;
+}
+
+.speciality {
+  width: 400px;
+}
+
+@media screen and (min-width:480px) {
+  .home__container-btn {
+    display: flex;
+    justify-content: end;
+  }
+
+  .home__btn {
+    border: 2px solid var(--highlight-color);
+    font-family: numito;
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 3%;
+    color: var(--highlight-color);
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+  .nav {
+    background-color: transparent;
+    position: static;
+    display: flex;
+  }
+
+  .nav__items {
+    list-style: none;
+    padding-left: 4rem;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .nav__item {
+    width: 150px;
+  }
+
+  .nav__link {
+    display: block;
+    margin-bottom: 0.25rem;
+    border-bottom: 2px solid var(--highlight-color);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.25rem;
+    text-align: left;
+    transition: transform 0.4s linear;
+  }
+
+  .nav__link:hover {
+    background-color: transparent;
+    color: var(--highlight-color);
+    transform: translateX(3rem);
+  }
+
+  .navburgerbutton {
+    display: none;
+  }
+
+  .header__link {
+    display: none;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas: "header home" "section section";
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .home {
+    grid-area: home;
+  }
+
+  .specialitiescontainer {
+    grid-area: section;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" " home" "section" "gallery";
+  }
+
+  .header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  .home {
+    grid-area: home;
+  }
+
+  .specialitiescontainer {
+    grid-area: section;
+  }
+
+  .foodgallery {
+    display: block;
+    grid-area: gallery;
+  }
+
+  .header__link {
+    display: flex;
+  }
+
+  .header__container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .nav {
+    width: 60%;
+    margin-top: 0;
+    height: auto;
+  }
+.nav__item{
+  width: 140px;
+}
+  .nav__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 0;
+    
+  }
+
+  .nav__link {
+    border: none;
+    transition-duration: 1s;
+  }
+  .nav__link:hover{
+    transform: scale(1.2);
+  }
+
+
+}
+
+@media screen and (min-width:1200px) {
+  .home__image-container {
+    display: block;
+    width: 35%;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .home__content {
+    width: 65%;
+  }
+
+  .home__img {
+    display: flex;
+    width: 90%;
+  }
+
+  /* animación hamburguesa */
+  .home__img {
+    animation-name: burguerMove;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 2s;
+  }
+
+  @keyframes burguerMove {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(50px);
+    }
+  }
+}
+
+@media screen and (min-width:1330px) {
+  .order {
+    display: flex;
+  }
+}
